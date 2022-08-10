@@ -1,0 +1,14 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: webapp-service
+spec:
+  selector:
+    app: example-app
+    name: simple-webapp-mysql
+  type: NodePort
+  ports:
+  - port: 8080
+    targetPort: 8080
+    nodePort: 30000
+  
