@@ -3,14 +3,19 @@ kind: Pod
 metadata:
   name: simple-webapp-mysql
   labels:
-    app: example-app
     name: simple-webapp-mysql
 spec:
   containers:
   - name: simple-webapp-mysql
-    image: kodekloud/simple-webapp-mysql
+    image: 616865343531.dkr.ecr.us-east-1.amazonaws.com/final-group3:v1.0
     ports:
-    - containerPort: 8080
+    - containerPort: 81
+    env:
+    - name: GROUP_NAME
+      valueFrom: 
+        configMapKeyRef:
+          name: webapp-config
+          key: group
     volumeMounts:
     - name: app-secret-volumes
       mountPath: "/opt/app-secret-volumes"

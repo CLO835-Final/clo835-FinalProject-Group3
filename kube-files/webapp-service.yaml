@@ -4,11 +4,9 @@ metadata:
   name: webapp-service
 spec:
   selector:
-    app: example-app
     name: simple-webapp-mysql
   type: NodePort
   ports:
-  - port: 8080
-    targetPort: 8080
+  - port: 81
+    targetPort: 81
     nodePort: 30000
-  
