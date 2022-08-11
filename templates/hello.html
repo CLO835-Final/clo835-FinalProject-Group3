@@ -8,10 +8,15 @@
 
   {% if db_connect_result %}
     <img src="{{ S_Url }}">
-    <h3> Successfully connected to the MySQL database.</h3>
+      <h3> {{ Group_No }} - Successfully connected to the MySQL database.</h3>
+        <h3>img url - {{ S_Url }}</h3>
+       
+    
   {% else %}
     <img src="{{ F_Url }}">
-    <h3> Failed connecting to the MySQL database. </h3>
+          <h3> {{ Group_No }} - Failed connecting to the MySQL database. </h3>
+            <h3>img url - {{ F_Url }}</h3>
+       
   {% endif %}
 
   {% if debug %}

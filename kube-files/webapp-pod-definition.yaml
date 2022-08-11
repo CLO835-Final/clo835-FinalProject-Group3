@@ -7,7 +7,7 @@ metadata:
 spec:
   containers:
   - name: simple-webapp-mysql
-    image: 616865343531.dkr.ecr.us-east-1.amazonaws.com/final-group3:v3.0
+    image: 616865343531.dkr.ecr.us-east-1.amazonaws.com/final-group3:v6.0
     ports:
     - containerPort: 81
     env:

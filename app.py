@@ -11,8 +11,8 @@ DB_Database = os.environ.get('DB_Database') or "mysql"
 DB_User = os.environ.get('DB_User')
 DB_Password = os.environ.get('DB_Password')
 Group_No = os.environ.get('Group_No')
-S_Url = os.environ.get('S_Url') or "https://clo835-group3.s3.amazonaws.com/success.jpg"
-F_Url = os.environ.get('F_Url') or "https://clo835-group3.s3.amazonaws.com/failed.png"
+S_Url = os.environ.get('S_Url') 
+F_Url = os.environ.get('F_Url') 
 
 @app.route("/")
 def main():
