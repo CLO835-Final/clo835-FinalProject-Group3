@@ -10,7 +10,9 @@ DB_Host = os.environ.get('DB_Host') or "mysql"
 DB_Database = os.environ.get('DB_Database') or "mysql"
 DB_User = os.environ.get('DB_User')
 DB_Password = os.environ.get('DB_Password')
-group_no = os.environ.get('GROUP_NO')
+Group_No = os.environ.get('Group_No')
+S_Url = os.environ.get('S_Url') or "https://clo835-group3.s3.amazonaws.com/success.jpg"
+F_Url = os.environ.get('F_Url') or "https://clo835-group3.s3.amazonaws.com/failed.png"
 
 @app.route("/")
 def main():
@@ -24,7 +26,7 @@ def main():
         color = '#ff3f3f'
         err_message = str(e)
 
-    return render_template('hello.html', debug="Environment Variables: DB_Host=" + (os.environ.get('DB_Host') or "Not Set") + "; DB_Database=" + (os.environ.get('DB_Database')  or "Not Set") + "; DB_User=" + (os.environ.get('DB_User')  or "Not Set") + "; DB_Password=" + (os.environ.get('DB_Password')  or "Not Set") + "; " + err_message, db_connect_result=db_connect_result, name=socket.gethostname(), color=color, group_no=group_no)
+    return render_template('hello.html', debug="Environment Variables: DB_Host=" + (os.environ.get('DB_Host') or "Not Set") + "; DB_Database=" + (os.environ.get('DB_Database')  or "Not Set") + "; DB_User=" + (os.environ.get('DB_User')  or "Not Set") + "; DB_Password=" + (os.environ.get('DB_Password')  or "Not Set") + "; " + err_message, db_connect_result=db_connect_result, name=socket.gethostname(), color=color, Group_No=Group_No, S_Url=S_Url, F_Url=F_Url)
 
 @app.route("/debug")
 def debug():

@@ -7,15 +7,25 @@ metadata:
 spec:
   containers:
   - name: simple-webapp-mysql
-    image: 616865343531.dkr.ecr.us-east-1.amazonaws.com/final-group3:v1.0
+    image: 616865343531.dkr.ecr.us-east-1.amazonaws.com/final-group3:v3.0
     ports:
     - containerPort: 81
     env:
-    - name: GROUP_NAME
+    - name: Group_No
       valueFrom: 
         configMapKeyRef:
           name: webapp-config
           key: group
+    - name: S_Url
+      valueFrom: 
+        configMapKeyRef:
+          name: webapp-config
+          key: surl
+    - name: F_Url
+      valueFrom: 
+        configMapKeyRef:
+          name: webapp-config
+          key: furl
     volumeMounts:
     - name: app-secret-volumes
       mountPath: "/opt/app-secret-volumes"

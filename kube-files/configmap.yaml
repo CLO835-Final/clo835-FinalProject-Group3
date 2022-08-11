@@ -4,3 +4,5 @@ metadata:
   name: webapp-config
 data:
   group: Group3
+  surl: "https://clo835-group3.s3.amazonaws.com/success.jpg"
+  furl: "https://clo835-group3.s3.amazonaws.com/failed.png"
