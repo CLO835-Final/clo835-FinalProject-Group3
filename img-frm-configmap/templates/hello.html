@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<title>Hello from {{ group_no }}</title>
+<body style="background: {{ color }};"></body>
+<div style="color: #e4e4e4; text-align: center; height: 90px; vertical-align: middle">
+    <h2></h2>Presented by {{ group_no }}</h2>
+       <h2>S3 img url : "{{ image_url }}"</h2>
+    {% if db_connect_result %}
+    <img src="{{ url_for('static', filename='img/success_url.jpg') }}" />
+    <h3>Successfully connected to the MySQL database.</h3>
+    {% else %}
+    <img src="{{ url_for('static', filename='img/failed_url.jpg') }}" />
+    <h3>Failed connecting to the MySQL database.</h3>
+    {% endif %}
+ 
+
+    {% if debug %}
+    <h2>{{ debug }}</h2>
+    {% endif %} {% if name %}
+    <p>From {{ name }}!</p>
+    {% endif %} {% if contents %}
+    <textarea rows="10" cols="50">
+    {{ contents }}
+  </textarea>
+    {% endif %}
+</div>
