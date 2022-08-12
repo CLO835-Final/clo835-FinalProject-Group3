@@ -2,39 +2,57 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: simple-webapp-mysql
-  namespace: final
   labels:
-    name : simple-webapp-mysql
+    name: simple-webapp-mysql
 spec:
-  replicas: 1
   selector:
     matchLabels:
-      name : simple-webapp-mysql 
-  
-  template:  
-    metadata:
       name: simple-webapp-mysql
+  replicas: 1
+  template:
+    metadata:
       labels:
         name: simple-webapp-mysql
     spec:
+
       containers:
       - name: simple-webapp-mysql
-        image: 308733176766.dkr.ecr.us-east-1.amazonaws.com/clo835:dockerv1.0
+        image: 616865343531.dkr.ecr.us-east-1.amazonaws.com/final-group3:v9.3
         ports:
         - containerPort: 81
         env:
-        - name: Group_No
+        - name: GROUP_NO
           valueFrom: 
             configMapKeyRef:
               name: webapp-config
               key: group
-        - name: S_Url
-          valueFrom: 
-            configMapKeyRef:
-              name: webapp-config
-              key: surl
-        - name: F_Url
-          valueFrom: 
-            configMapKeyRef:
-              name: webapp-config
-              key: furl
+        # - name: S_Url
+        #   valueFrom: 
+        #     configMapKeyRef:
+        #       name: webapp-config
+        #       key: surl
+        # - name: F_Url
+        #   valueFrom: 
+        #     configMapKeyRef:
+        #       name: webapp-config
+        #       key: furl
+
+        volumeMounts:
+        - name: app-secret-volumes
+          mountPath: "/opt/app-secret-volumes"
+          readOnly: true
+        - name: config-volume
+          mountPath: /clo835/config
+        envFrom:
+          - secretRef:
+              name: app-secret
+      volumes:
+      - name: app-secret-volumes
+        secret:
+          secretName: app-secret
+      - name: config-volume
+        configMap:
+          name: webapp-config
+          items:
+          - key: image_url
+            path: image_url
