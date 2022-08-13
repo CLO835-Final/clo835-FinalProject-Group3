@@ -18,7 +18,7 @@ spec:
 
       containers:
       - name: simple-webapp-mysql
-        image: 616865343531.dkr.ecr.us-east-1.amazonaws.com/final-group3:v9.3  #uncomment to generate imgane from configmap
+        image: 616865343531.dkr.ecr.us-east-1.amazonaws.com/final-group3:imgfrmconfigmap  #uncomment to generate imgane from configmap
         #image: 616865343531.dkr.ecr.us-east-1.amazonaws.com/final-group3:img-frm-url  #uncomment to generate imgane from hard coded url
        
         ports:

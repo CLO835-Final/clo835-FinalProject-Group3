@@ -8,7 +8,9 @@ spec:
   serviceAccountName: clo835
   containers:
   - name: simple-webapp-mysql
-    image: 616865343531.dkr.ecr.us-east-1.amazonaws.com/final-group3:v9.3
+    image: 616865343531.dkr.ecr.us-east-1.amazonaws.com/final-group3:imgfrmconfigmap
+    #image: 616865343531.dkr.ecr.us-east-1.amazonaws.com/final-group3:img-frm-url  #uncomment to generate imgane from hard coded url
+       
     ports:
     - containerPort: 81
     env:
