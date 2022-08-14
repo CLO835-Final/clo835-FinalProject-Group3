@@ -5,7 +5,7 @@ metadata:
   labels:
     name: simple-webapp-mysql
 spec:
-  serviceAccountName: clo835
+  #serviceAccountName: clo835
   containers:
   - name: simple-webapp-mysql
     image: 616865343531.dkr.ecr.us-east-1.amazonaws.com/final-group3:imgfrmconfigmap
