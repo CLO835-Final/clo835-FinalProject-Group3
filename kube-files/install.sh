@@ -7,7 +7,7 @@ echo "display config map"
 kubectl get configmap  -n final;
 set -x
 sleep 5
-echo "create secret"
+echo "5.2 create secret"
 kubectl  create -f  secret-data.yaml -n final; 
 set -x
 sleep 5
@@ -15,7 +15,7 @@ sleep 5
 kubectl get secret  -n final;
 set -x
 sleep 5
-echo "mysql pvc"
+echo "5.3 mysql pvc"
 kubectl  create -f  mysql-pvc.yaml -n final; 
 set -x
 sleep 5

@@ -5,7 +5,7 @@ metadata:
   labels:
     name: simple-webapp-mysql
 spec:
-  #serviceAccountName: clo835
+  
   selector:
     matchLabels:
       name: simple-webapp-mysql
@@ -15,10 +15,10 @@ spec:
       labels:
         name: simple-webapp-mysql
     spec:
-
+      serviceAccountName: clo835
       containers:
       - name: simple-webapp-mysql
-        image: 616865343531.dkr.ecr.us-east-1.amazonaws.com/final-group3:imgfrmconfigmap  #uncomment to generate imgane from configmap
+        image: 616865343531.dkr.ecr.us-east-1.amazonaws.com/final-group3:v0.2  #uncomment to generate imgane from configmap
         #image: 616865343531.dkr.ecr.us-east-1.amazonaws.com/final-group3:img-frm-url  #uncomment to generate imgane from hard coded url
        
         ports:
