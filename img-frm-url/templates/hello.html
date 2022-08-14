@@ -1,0 +1,36 @@
+<!doctype html>
+<title>Hello from {{ Group_No }}</title>
+<body style="background: {{ color }};"></body>
+<div style="color: #e4e4e4;
+    text-align:  center;
+    height: 90px;
+    vertical-align:  middle;">
+
+  {% if db_connect_result %}
+    <img src="{{ S_Url }}">
+      <h3> {{ Group_No }} - Successfully connected to the MySQL database.</h3>
+        <h3>img url - {{ S_Url }}</h3>
+       
+    
+  {% else %}
+    <img src="{{ F_Url }}">
+          <h3> {{ Group_No }} - Failed connecting to the MySQL database. </h3>
+            <h3>img url - {{ F_Url }}</h3>
+       
+  {% endif %}
+
+  {% if debug %}
+    <h2> {{ debug }} </h2>
+  {% endif %}
+
+  {% if name %}
+    <p> From {{ name }}!</p>
+  {% endif %}
+
+  {% if contents %}
+  <textarea rows="10" cols="50">
+    {{ contents }}
+  </textarea>
+  {% endif %}
+
+</div>

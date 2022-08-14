@@ -1,0 +1,15 @@
+{
+  "Id": "Policy1546414473940",
+  "Version": "2012-10-17",
+  "Statement": [{
+    "Sid": "Stmt1546414471931",
+    "Action": "s3:ListBucket",
+    "Effect": "Allow",
+    "Resource": "arn:aws:s3:::clo835-group3",
+    "Principal": {
+      "AWS": [
+        "arn:aws:iam::616865343531:role/eksctl-finalproject-addon-iamserviceaccount-Role1-19JDS38MAAF7W"
+      ]
+    }
+  }]
+}

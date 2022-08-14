@@ -1,0 +1,16 @@
+#create S3 bucket plocy to restrict read-only access to s3:::clo835-group3 bucket
+aws iam create-policy --policy-name s3-restricted-read --policy-document file://S3-restricted-read.json
+
+#Create iamserviceaccount and attach s3 policy created in previous step
+
+eksctl create iamserviceaccount \
+    --name <service account name> \
+    --namespace <namespace> \
+    --cluster <clustername> \
+    --attach-policy-arn <S3 restricted read policy arn> \
+    --approve \
+    --override-existing-serviceaccounts
+
+
+#to get arn of the ARN IAM role attached to the SA
+k describe sa  clo835 -n final -o yaml
