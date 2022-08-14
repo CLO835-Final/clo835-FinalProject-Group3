@@ -31,7 +31,7 @@ jobs:
          ECR_REPOSITORY: ${{ matrix.repo }}
          IMAGE_TAG: v0.2
         run: |
-         cd ${{ matrix.repo }}/
+         cd  img-frm-configmap/
          ls -ltra
          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
          docker run -d -p 8080:81 --name testimg  $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
